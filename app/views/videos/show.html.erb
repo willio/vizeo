@@ -8,9 +8,11 @@
   <strong>Description:</strong>
   <%= @video.comment %>
 </p>
-
 <p>
 	Added: <%= @video.updated_at %>
+</p>
+<p>
+	<%= link_to 'Watch on Youtube', @video.url %>
 </p>
 
 <%= link_to 'Back', videos_path %> | 
