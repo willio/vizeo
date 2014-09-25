@@ -1,0 +1,26 @@
+<h2><%= link_to 'Vizeo', controller: 'videos' %></h2>
+<h5>Like Vimeo but leaner.</h5>
+
+<div><%= link_to 'Add New Video', new_video_path %></div>
+
+<br>
+<table>
+<!--   <tr>
+    <th>Title</th>
+    <th>URL</th>
+    <th>Description</th>
+  </tr>
+ --> 
+  <% @videos.each_with_index do |video, index| %>
+<!--   <ul><%= link_to video.title, video %></ul> -->
+    <tr>
+      <td><%= index + 1 %>. </td>
+      <td><%= link_to video.title, video %></td>
+      <!-- <td><%= video.url %></td> -->
+      <td><%= video.comment %></td>
+      
+      <td><%= link_to 'Edit', edit_video_path(video) %></td>
+      <td><%= link_to 'Delete', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+ <% end %>
+</table>

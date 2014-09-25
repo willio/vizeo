@@ -1,0 +1,13 @@
+<h2><%= @video.title %></h2>
+ 
+<div class="embed-container">  
+  <%= embed(@video.url) %>
+</div>  
+
+<p>
+  <strong>Description:</strong>
+  <%= @video.comment %>
+</p>
+
+<%= link_to 'Back', videos_path %> | 
+<%= link_to 'Edit', edit_video_path(@video) %>
