@@ -1,5 +1,5 @@
-<h2><%= @video.title %></h2>
- 
+<h2><%= link_to 'Vizeo©', controller: 'videos' %> > <%= @video.title %></h2>
+<hr>
 <div class="embed-container">  
   <%= embed(@video.url) %>
 </div>  
@@ -7,6 +7,10 @@
 <p>
   <strong>Description:</strong>
   <%= @video.comment %>
+</p>
+
+<p>
+	Added: <%= @video.updated_at %>
 </p>
 
 <%= link_to 'Back', videos_path %> | 

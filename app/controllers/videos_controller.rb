@@ -38,7 +38,7 @@ class VideosController < ApplicationController
 
 	def update
 		@video = Video.find(params[:id])	
-		@video.save
+		@video.update_attributes(video_params)
 		redirect_to @video
 	end
 
